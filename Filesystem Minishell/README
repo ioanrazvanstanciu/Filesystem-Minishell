@@ -1,0 +1,44 @@
+Stanciu Ioan-Razvan, 315CC
+
+Numele proiectului: Filesystem Minishell
+Durata proiectului: 30 ore
+
+In cadrul acestui proiect am implementat functiile: 'create fs',
+'delete fs', 'touch', 'mkdir', 'ls', 'pwd' si 'cd'.
+
+Prima data am creat radacina sistemului de fisiere, in cadrul acesteia
+setand parintele directorului ca fiind 'NULL', numele acestuia ca fiind '/',
+iar lista de fisiere, respectiv cea de directoare, le-am initializat
+de asemenea tot cu 'NULL'.
+
+Dupa aceasta am realizat functiile 'touch', 'mkdir' si 'ls'.
+
+Atat pentru functia 'touch', cat si pentru functia 'mkdir' am mai creat o
+noua structura de tip nod, pentru a putea naviga prin lista de fisiere,
+cat si prin cea de directoare.
+
+Pentru ambele operatii am realizat cate trei functii, una care afla locul
+in care trebuie introdus fisierul sau directorul, in cadrul acesteia se
+compara folosind functia 'strcmp()' daca fisierul sau directorul este in
+ordine lexicografica sau nu. Cea de-a doua functie introduce fisierul sau
+directorul in lista deja existenta, cea de fisiere sau cea de directoare,
+pozitia lor fiind cea exacta: fie la inceput, fie la final, fie intre alte
+fisiere sau directoare. Ultima functie le apeleaza pe celelalte doua si
+realizeaza operatia dorita: la comanda 'touch <filename> <content>'
+se introduce fisierul '<filename>' in lista de fisiere, iar la comanda
+'mkdir <directoryname>' se introduce directorul '<directoryname>' in
+lista de directoare.
+
+In cadrul functiei 'ls' am parcurs lista de fisiere si cea de directoare
+si le-am afisat tinand cont de spatierea ceruta.
+
+In ceea ce priveste functia 'cd', am verificat existenta directorului
+'<directoryname>' din comanda 'cd <directoryname>' si am trecut din
+directorul curent in noul director folosindu-ma de strucura nod a
+directoarelor.
+
+In final am realizat functia 'pwd' intr-un mod recursiv, afisand
+in modul cerut calea pana la directorul curent.
+
+Sistemul de fisiere astfel creat se poate inchide utilizand
+comanda 'delete fs', realizata in acest scop.
